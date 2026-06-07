@@ -37,7 +37,7 @@ public class Task3 {
             // Заголовок таблицы
             String header = String.format("%-4s %-20s %-15s %-15s",
                     "№", "Дата/время", "Температура", "Осадки (мм)");
-            String line = "-".repeat(56);
+            String line = new String(new char[56]).replace("\0", "-");
 
             System.out.println("\nПрогноз погоды для Нижнего Новгорода:");
             System.out.println(line);
