@@ -10,7 +10,7 @@ public class App {
 
     public static void main(String[] args) {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");        // без окна браузера
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
@@ -23,8 +23,9 @@ public class App {
             driver.get("https://www.calculator.net/password-generator.html");
             try {
                 WebElement passwordField = driver.findElement(
-                        By.cssSelector("input[type='text'].inputtext"));
-                System.out.println("Сгенерированный пароль: " + passwordField.getAttribute("value"));
+                        By.cssSelector("input.infofield"));
+                System.out.println("Сгенерированный пароль: "
+                        + passwordField.getAttribute("value"));
             } catch (Exception e) {
                 System.out.println("Не удалось найти поле пароля: " + e.getMessage());
             }
